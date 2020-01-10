@@ -5,7 +5,7 @@ using System.ServiceModel.Dispatcher;
 
 namespace WCFServices
 {
-    internal class MyFormatter : IDispatchMessageFormatter
+    public class MyFormatter : IDispatchMessageFormatter
     {
         IDispatchMessageFormatter originalFormatter;
         public MyFormatter(IDispatchMessageFormatter originalFormatter)

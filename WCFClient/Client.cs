@@ -11,28 +11,21 @@ namespace WCFClient
 {
     class Client
     {
-        private static string baseAddress = "http://" + Environment.MachineName + ":8000/Service";
-
+        
         static void Main(string[] args)
         {
-            ChannelFactory<IService> factory = new ChannelFactory<IService>(GetBinding(), new EndpointAddress(baseAddress));
-            IService proxy = factory.CreateChannel();
-            Console.WriteLine(proxy.Echo("Hello"));
-
-            Console.WriteLine("And now with the bypass header");
-            using (new OperationContextScope((IContextChannel)proxy))
+            try
             {
-                HttpRequestMessageProperty httpRequestProp = new HttpRequestMessageProperty();
-                httpRequestProp.Headers.Add("X-BypassServer", "This message will not reach the service operation");
-                OperationContext.Current.OutgoingMessageProperties.Add(
-                  HttpRequestMessageProperty.Name,
-                  httpRequestProp);
-                Console.WriteLine(proxy.Echo("Hello"));
+                TestServiceClient.ServiceClient sc = new TestServiceClient.ServiceClient();
+                string result = sc.HelloWorld("hello");
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
 
-            ((IClientChannel)proxy).Close();
-            factory.Close();
-
+            
             Console.ReadKey();
         }
 

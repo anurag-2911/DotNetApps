@@ -4,7 +4,7 @@ using System.ServiceModel.Dispatcher;
 
 namespace WCFServices
 {
-    internal class MyInvoker : IOperationInvoker
+    public class MyInvoker : IOperationInvoker
     {
         IOperationInvoker originalInvoker;
 

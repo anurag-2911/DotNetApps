@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace WCFServices
 {
-    class MyInspector : IDispatchMessageInspector
+    public class MyInspector : IDispatchMessageInspector
     {
         ServiceEndpoint endpoint;
         public MyInspector(ServiceEndpoint endpoint)

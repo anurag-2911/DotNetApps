@@ -6,6 +6,6 @@ namespace WCFServices
     public interface IService
     {
         [OperationContract]
-        string Echo(string text);
+        string HelloWorld(string text);
     }
 }

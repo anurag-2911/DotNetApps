@@ -8,7 +8,7 @@ namespace WCFServices
 {
     public class Service : IService
     {
-        public string Echo(string text)
+        public string HelloWorld(string text)
         {
             return text;
         }
