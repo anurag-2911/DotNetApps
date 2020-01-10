@@ -19,6 +19,8 @@ namespace WCFClient
                 TestServiceClient.ServiceClient sc = new TestServiceClient.ServiceClient();
                 string result = sc.HelloWorld("hello");
 
+                result = sc.WebFaultMethod();
+
             }
             catch (Exception ex)
             {

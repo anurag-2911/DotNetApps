@@ -7,5 +7,9 @@ namespace WCFServices
     {
         [OperationContract]
         string HelloWorld(string text);
+
+        [OperationContract]
+        string WebFaultMethod();
+
     }
 }
