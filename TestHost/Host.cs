@@ -15,7 +15,7 @@ namespace TestHost
         static void Main(string[] args)
         {
             ServiceHost serviceHost = new ServiceHost(typeof(Service));
-            serviceHost.Description.Behaviors.Add(new CustomServiceBehavior());
+           // serviceHost.Description.Behaviors.Add(new CustomServiceBehavior());
 
             serviceHost.Open();
 
