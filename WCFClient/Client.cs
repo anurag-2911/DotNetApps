@@ -17,11 +17,11 @@ namespace WCFClient
         {
             try
             {
-                TestServiceClient.ServiceClient sc = new TestServiceClient.ServiceClient();
+                MessageInterceptorDemoClient.ServiceClient serviceProxy = new MessageInterceptorDemoClient.ServiceClient();
                 Trace.Flush();
                 try
                 {
-                    string result = sc.HelloWorld("hello");
+                    string result = serviceProxy.HelloWorld("hello");
                     Trace.WriteLine(result);
                 }
                 catch (Exception ex)
@@ -33,7 +33,7 @@ namespace WCFClient
 
                 try
                 {
-                    string result = sc.WebFaultMethod();
+                    string result = serviceProxy.WebFaultMethod();
                     Trace.WriteLine(result);
                 }
                 catch (Exception exception)
@@ -44,7 +44,7 @@ namespace WCFClient
                 
                 try
                 {
-                    string result = sc.TestMessage();
+                    string result = serviceProxy.TestMessage();
                     Trace.WriteLine(result);
                 }
                 catch(Exception ex)
