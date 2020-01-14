@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
@@ -17,9 +18,39 @@ namespace WCFClient
             try
             {
                 TestServiceClient.ServiceClient sc = new TestServiceClient.ServiceClient();
-                string result = sc.HelloWorld("hello");
+                Trace.Flush();
+                try
+                {
+                    string result = sc.HelloWorld("hello");
+                    Trace.WriteLine(result);
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine(ex.ToString());
+                    
+                }
 
-                result = sc.WebFaultMethod();
+
+                try
+                {
+                    string result = sc.WebFaultMethod();
+                    Trace.WriteLine(result);
+                }
+                catch (Exception exception)
+                {
+                    Trace.WriteLine(exception.ToString());
+                    
+                }
+                
+                try
+                {
+                    string result = sc.TestMessage();
+                    Trace.WriteLine(result);
+                }
+                catch(Exception ex)
+                {
+                    Trace.WriteLine(ex.ToString());
+                }
 
             }
             catch (Exception ex)

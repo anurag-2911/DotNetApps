@@ -14,8 +14,15 @@ namespace TestHost
     {
         static void Main(string[] args)
         {
-            ServiceHost serviceHost = new ServiceHost(typeof(Service));
-           // serviceHost.Description.Behaviors.Add(new CustomServiceBehavior());
+            ServiceHost serviceHost = new ServiceHost(typeof(MessageInterceptorDemoService));
+            // serviceHost.Description.Behaviors.Add(new CustomServiceBehavior());
+            ServiceEndpoint endPoint=serviceHost.Description.Endpoints.Find(typeof(WCFServices.IMessageIterceptorDemoService));
+            endPoint.EndpointBehaviors.Add(new CustomOperationBypasser());
+
+            foreach (var operation in endPoint.Contract.Operations)
+            {
+                operation.Behaviors.Add(new CustomOperationBypasser());
+            }
 
             serviceHost.Open();
 

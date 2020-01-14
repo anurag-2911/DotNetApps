@@ -46,17 +46,16 @@
   <ItemGroup>
     <Compile Include="CustomServiceBehavior.cs" />
     <Compile Include="CustomServiceInspector.cs" />
-    <Compile Include="IService.cs" />
+    <Compile Include="IMessageIterceptorDemoService.cs" />
     <Compile Include="MessageBehaviorExtension.cs" />
     <Compile Include="MessageInspector.cs" />
-    <Compile Include="MyFormatter.cs" />
-    <Compile Include="MyInspector.cs" />
-    <Compile Include="MyInvoker.cs" />
-    <Compile Include="MyOperationBypasser.cs" />
+    <Compile Include="CustomMessageFormatter.cs" />
+    <Compile Include="CustomMessageInspector.cs" />
+    <Compile Include="CustomOperationInvoker.cs" />
+    <Compile Include="CustomOperationBypasser.cs" />
     <Compile Include="ParameterInspector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service.cs" />
-    <Compile Include="TestRequestInterceptor.cs" />
+    <Compile Include="MessageInterceptorDemoService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
