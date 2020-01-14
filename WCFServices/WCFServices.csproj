@@ -44,16 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomServiceBehavior.cs" />
-    <Compile Include="CustomServiceInspector.cs" />
-    <Compile Include="IMessageIterceptorDemoService.cs" />
-    <Compile Include="MessageBehaviorExtension.cs" />
-    <Compile Include="MessageInspector.cs" />
+    <Compile Include="CommonRestOperations.cs" />
+    <Compile Include="Contracts\IMessageIterceptorDemoService.cs" />
     <Compile Include="CustomMessageFormatter.cs" />
     <Compile Include="CustomMessageInspector.cs" />
     <Compile Include="CustomOperationInvoker.cs" />
     <Compile Include="CustomOperationBypasser.cs" />
-    <Compile Include="ParameterInspector.cs" />
+    <Compile Include="Contracts\ICommonRestOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MessageInterceptorDemoService.cs" />
   </ItemGroup>
