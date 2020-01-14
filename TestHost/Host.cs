@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.ServiceModel.Channels;
 using System.ServiceModel.Description;
-using System.Text;
-using System.Threading.Tasks;
 using WCFServices;
 
 namespace TestHost
@@ -44,7 +39,7 @@ namespace TestHost
             {
                 ServiceHost serviceHost = new ServiceHost(typeof(MessageInterceptorDemoService));
 
-                ServiceEndpoint endPoint = serviceHost.Description.Endpoints.Find(typeof(WCFServices.IMessageIterceptorDemoService));
+                ServiceEndpoint endPoint = serviceHost.Description.Endpoints.Find(typeof(IMessageIterceptorDemoService));
 
                 endPoint.EndpointBehaviors.Add(new CustomOperationBypasser());
 
