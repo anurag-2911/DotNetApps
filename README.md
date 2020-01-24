@@ -1,4 +1,7 @@
 # DotNetApps
+
+This solution demo a way to return custom WCF fault code to the WCF client or Rest client without throwing web fault exception .
+
 1. Build the solution
 2. Launch visual studio in Administrator mode.
 3. Run "TestHost" console application first which will host WCF soap and rest services.
