@@ -24,6 +24,16 @@ namespace TestHost
             {
                 //rest wcf services host
                 ServiceHost restServiceHost = new ServiceHost(typeof(CommonRestOperations));
+
+                ServiceEndpoint restServiceEndPoint = restServiceHost.Description.Endpoints.Find(typeof(ICommonRestOperations));
+
+                restServiceEndPoint.EndpointBehaviors.Add(new CustomOperationBypasser());
+
+                foreach (var operation in restServiceEndPoint.Contract.Operations)
+                {
+                    operation.Behaviors.Add(new CustomOperationBypasser());
+                }
+                
                 restServiceHost.Open();
                 Console.WriteLine("rest services hosted successfully");
             }
